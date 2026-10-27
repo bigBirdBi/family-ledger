@@ -1,0 +1,51 @@
+<view class="page">
+  <view wx:if="{{error}}" class="card">
+    <empty-state title="首页加载失败" description="{{error}}" action-text="重试" bind:action="onRetry" />
+  </view>
+
+  <block wx:else>
+    <view class="card summary">
+      <text class="muted">本月概览</text>
+      <view class="metrics">
+        <view class="metric">
+          <text class="muted">收入</text>
+          <text class="amount-income">{{incomeText}}</text>
+        </view>
+        <view class="metric">
+          <text class="muted">支出</text>
+          <text class="amount-expense">{{expenseText}}</text>
+        </view>
+        <view class="metric">
+          <text class="muted">结余</text>
+          <text>{{balanceText}}</text>
+        </view>
+      </view>
+      <view class="budget">
+        <view class="row-between">
+          <text class="muted">预算进度</text>
+          <text class="muted">{{budgetSet ? budgetPercent + '%' : '未设置'}}</text>
+        </view>
+        <t-progress wx:if="{{budgetSet}}" percentage="{{budgetPercent}}" />
+      </view>
+    </view>
+
+    <t-button theme="primary" size="large" block bind:tap="onRecord">记一笔</t-button>
+
+    <view class="card list">
+      <text class="section-title">最近账单</text>
+      <block wx:if="{{bills.length}}">
+        <bill-card
+          wx:for="{{bills}}"
+          wx:key="id"
+          title="{{item.title}}"
+          note="{{item.note}}"
+          date="{{item.date}}"
+          amount-text="{{item.amountText}}"
+          type="{{item.type}}"
+          payer-name="{{item.payerName}}"
+        />
+      </block>
+      <empty-state wx:else title="还没有账单" description="记一笔家庭收支，成员都能看到同一本账" action-text="去记账" bind:action="onRecord" />
+    </view>
+  </block>
+</view>

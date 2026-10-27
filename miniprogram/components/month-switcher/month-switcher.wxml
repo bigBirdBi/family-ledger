@@ -1,0 +1,9 @@
+<view class="switcher">
+  <view class="nav tap" bindtap="onPrev" aria-role="button" aria-label="上一月">
+    <t-icon name="chevron-left" size="44rpx" />
+  </view>
+  <text class="label">{{label}}</text>
+  <view class="nav tap" bindtap="onNext" aria-role="button" aria-label="下一月">
+    <t-icon name="chevron-right" size="44rpx" />
+  </view>
+</view>

@@ -1,0 +1,13 @@
+Component({
+  properties: {
+    title: { type: String, value: '暂无内容' },
+    description: { type: String, value: '' },
+    actionText: { type: String, value: '' },
+    retry: { type: Boolean, value: false },
+  },
+  methods: {
+    onAction() {
+      this.triggerEvent('action')
+    },
+  },
+})

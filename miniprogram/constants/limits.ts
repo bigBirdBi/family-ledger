@@ -1,0 +1,12 @@
+export const MEMBER_LIMIT = 8
+export const MIN_AMOUNT_CENTS = 1
+export const MAX_AMOUNT_CENTS = 99_999_999
+export const MAX_NOTE_LENGTH = 200
+export const INVITE_TTL_MS = 10 * 60 * 1000
+export const INVITE_CODE_LENGTH = 6
+export const LIST_PAGE_SIZE = 20
+export const RECENT_BILL_COUNT = 8
+export const RECENT_CATEGORY_COUNT = 5
+export const TREND_MONTHS = 6
+export const INVITE_FAIL_LIMIT = 10
+export const INVITE_FAIL_WINDOW_MS = 10 * 60 * 1000

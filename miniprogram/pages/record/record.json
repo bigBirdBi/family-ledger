@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "记一笔",
+  "usingComponents": {
+    "amount-keypad": "/components/amount-keypad/amount-keypad",
+    "category-picker": "/components/category-picker/category-picker"
+  }
+}

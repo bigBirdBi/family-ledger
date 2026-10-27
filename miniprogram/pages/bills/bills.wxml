@@ -1,0 +1,26 @@
+<view class="page">
+  <view class="card">
+    <month-switcher month="{{month}}" bind:change="onMonthChange" />
+    <t-search value="{{keyword}}" placeholder="搜索备注" bind:submit="onSearch" bind:change="onSearch" />
+  </view>
+
+  <view wx:if="{{error}}" class="card">
+    <empty-state title="账单加载失败" action-text="重试" bind:action="onRetry" />
+  </view>
+  <view wx:elif="{{!bills.length}}" class="card">
+    <empty-state title="本月暂无账单" description="换个月份看看，或去记一笔" />
+  </view>
+  <view wx:else class="card">
+    <bill-card
+      wx:for="{{bills}}"
+      wx:key="id"
+      title="{{item.title}}"
+      note="{{item.note}}"
+      date="{{item.date}}"
+      amount-text="{{item.amountText}}"
+      type="{{item.type}}"
+      payer-name="{{item.payerName}}"
+    />
+    <text class="muted finished">{{finished ? '没有更多了' : '上拉加载更多'}}</text>
+  </view>
+</view>

@@ -1,0 +1,30 @@
+.summary {
+  margin-bottom: 24rpx;
+}
+
+.metrics {
+  display: flex;
+  margin-top: 20rpx;
+  gap: 16rpx;
+}
+
+.metric {
+  flex: 1;
+  min-width: 0;
+}
+
+.metric text:last-child {
+  display: block;
+  margin-top: 8rpx;
+  font-size: 36rpx;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.budget {
+  margin-top: 28rpx;
+}
+
+.list {
+  margin-top: 24rpx;
+}

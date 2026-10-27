@@ -1,0 +1,46 @@
+<view class="page">
+  <view class="card">
+    <month-switcher month="{{month}}" bind:change="onMonthChange" />
+  </view>
+
+  <view wx:if="{{error}}" class="card">
+    <empty-state title="统计加载失败" action-text="重试" bind:action="onRetry" />
+  </view>
+
+  <block wx:else>
+    <view class="card">
+      <text class="section-title">分类支出</text>
+      <empty-state wx:if="{{!categories.length}}" title="暂无分类数据" />
+      <view wx:for="{{categories}}" wx:key="label" class="bar-row">
+        <text>{{item.label}}</text>
+        <t-progress percentage="{{item.percent}}" />
+      </view>
+    </view>
+
+    <view class="card">
+      <text class="section-title">成员支付净额</text>
+      <empty-state wx:if="{{!members.length}}" title="暂无成员数据" />
+      <view wx:for="{{members}}" wx:key="name" class="row-between member">
+        <text>{{item.name}}</text>
+        <text>{{item.amountText}}</text>
+      </view>
+    </view>
+
+    <view class="card">
+      <text class="section-title">近 6 个月趋势</text>
+      <view wx:if="{{trend.length}}" class="chart">
+        <view wx:for="{{trend}}" wx:key="month" class="col">
+          <view class="col-bar" style="height: {{item.height}}rpx;"></view>
+          <text class="muted">{{item.month}}</text>
+        </view>
+      </view>
+      <empty-state wx:else title="暂无趋势" />
+    </view>
+
+    <view class="card">
+      <text class="section-title">本月预算</text>
+      <text wx:if="{{!budgetSet}}" class="muted">未设置</text>
+      <t-progress wx:else percentage="{{budgetPercent}}" />
+    </view>
+  </block>
+</view>

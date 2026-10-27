@@ -1,0 +1,8 @@
+<view class="bill tap" bindtap="onTap">
+  <view class="main">
+    <text class="title">{{title}}</text>
+    <text class="meta">{{date}} · {{payerName}}</text>
+    <text wx:if="{{note}}" class="note">{{note}}</text>
+  </view>
+  <text class="amount amount-{{type}}">{{amountText}}</text>
+</view>

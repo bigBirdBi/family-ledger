@@ -1,0 +1,12 @@
+<view class="keypad">
+  <view
+    wx:for="{{keys}}"
+    wx:key="*this"
+    class="key tap"
+    data-key="{{item}}"
+    bindtap="onKey"
+  >
+    <t-icon wx:if="{{item === 'del'}}" name="rollback" size="40rpx" />
+    <text wx:else>{{item}}</text>
+  </view>
+</view>

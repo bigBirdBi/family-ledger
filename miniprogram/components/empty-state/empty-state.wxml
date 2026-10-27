@@ -1,0 +1,13 @@
+<view class="empty">
+  <t-empty description="{{title}}" />
+  <text wx:if="{{description}}" class="desc">{{description}}</text>
+  <t-button
+    wx:if="{{actionText}}"
+    theme="primary"
+    size="medium"
+    t-class="tap"
+    bind:tap="onAction"
+  >
+    {{actionText}}
+  </t-button>
+</view>

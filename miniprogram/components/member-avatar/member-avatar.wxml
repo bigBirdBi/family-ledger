@@ -1,0 +1,4 @@
+<view class="avatar" style="width: {{size}}rpx; height: {{size}}rpx;">
+  <image wx:if="{{src}}" class="img" src="{{src}}" mode="aspectFill" />
+  <text wx:else class="letter">{{letter}}</text>
+</view>

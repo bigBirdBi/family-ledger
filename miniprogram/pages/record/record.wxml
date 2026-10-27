@@ -1,0 +1,27 @@
+<view class="page">
+  <view class="types">
+    <view class="type tap {{type === 'expense' ? 'active' : ''}}" data-type="expense" bindtap="onType">支出</view>
+    <view class="type tap {{type === 'income' ? 'active' : ''}}" data-type="income" bindtap="onType">收入</view>
+    <view class="type tap {{type === 'refund' ? 'active' : ''}}" data-type="refund" bindtap="onType">退款</view>
+  </view>
+
+  <view class="amount-board card">
+    <text class="muted">金额（元）</text>
+    <text class="amount-value">{{amount || '0.00'}}</text>
+  </view>
+
+  <view class="card">
+    <text class="section-title">分类</text>
+    <category-picker value="{{categoryId}}" bind:change="onCategory" />
+  </view>
+
+  <view class="card">
+    <t-cell title="日期" note="{{occurredOn}}" />
+    <t-cell title="付款人" note="当前用户（默认）" />
+    <t-input label="备注" value="{{note}}" maxlength="{{maxNote}}" placeholder="可选，最多 200 字" bind:change="onNote" />
+  </view>
+
+  <amount-keypad value="{{amount}}" bind:change="onAmount" />
+
+  <t-button theme="primary" size="large" block disabled="{{submitting}}" bind:tap="onSave">保存</t-button>
+</view>

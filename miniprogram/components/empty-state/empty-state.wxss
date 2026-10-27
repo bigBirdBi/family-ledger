@@ -1,0 +1,14 @@
+.empty {
+  padding: 80rpx 24rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24rpx;
+}
+
+.desc {
+  color: #475569;
+  font-size: 24rpx;
+  text-align: center;
+  max-width: 520rpx;
+}

@@ -1,0 +1,79 @@
+page {
+  --color-primary: #2563eb;
+  --color-on-primary: #ffffff;
+  --color-income: #047857;
+  --color-expense: #dc2626;
+  --color-refund: #d97706;
+  --color-background: #f8fafc;
+  --color-foreground: #0f172a;
+  --color-muted: #475569;
+  --color-card: #ffffff;
+  --color-border: #e2e8f0;
+  --td-brand-color: #2563eb;
+  --td-brand-color-hover: #1d4ed8;
+  --td-brand-color-active: #1e40af;
+  --space-1: 8rpx;
+  --space-2: 16rpx;
+  --space-3: 24rpx;
+  --space-4: 32rpx;
+  --radius: 20rpx;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-size: 28rpx;
+  line-height: 1.5;
+  min-height: 100%;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 24rpx 24rpx calc(24rpx + env(safe-area-inset-bottom));
+  box-sizing: border-box;
+}
+
+.card {
+  background: var(--color-card);
+  border: 1rpx solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 28rpx;
+}
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: var(--color-foreground);
+  margin-bottom: 16rpx;
+}
+
+.muted {
+  color: var(--color-muted);
+  font-size: 24rpx;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.row-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.amount-income {
+  color: var(--color-income);
+  font-variant-numeric: tabular-nums;
+}
+
+.amount-expense {
+  color: var(--color-expense);
+  font-variant-numeric: tabular-nums;
+}
+
+.tap {
+  min-height: 88rpx;
+}
+
+.tap:active {
+  opacity: 0.72;
+}

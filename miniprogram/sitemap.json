@@ -1,0 +1,9 @@
+{
+  "desc": "家庭账本不对外检索",
+  "rules": [
+    {
+      "action": "disallow",
+      "page": "*"
+    }
+  ]
+}

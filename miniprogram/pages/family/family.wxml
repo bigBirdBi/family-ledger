@@ -1,0 +1,31 @@
+<view class="page">
+  <view class="card">
+    <text class="section-title">{{familyName || '尚未加入家庭'}}</text>
+    <text class="muted">{{roleLabel || '完善资料并创建或加入家庭后，可管理成员与邀请'}}</text>
+  </view>
+
+  <view class="card">
+    <text class="section-title">成员</text>
+    <view wx:if="{{members.length}}" class="members">
+      <view wx:for="{{members}}" wx:key="openid" class="member">
+        <member-avatar src="{{item.src}}" name="{{item.name}}" />
+        <text class="name">{{item.name}}</text>
+      </view>
+    </view>
+    <empty-state wx:else title="还没有家庭成员" description="创建家庭或输入邀请码加入" />
+  </view>
+
+  <t-cell-group>
+    <t-cell title="邀请家人" arrow bind:tap="onInvite" />
+    <t-cell title="隐私说明" arrow />
+    <t-cell title="退出或解散" arrow bind:tap="onLeave" />
+  </t-cell-group>
+
+  <confirm-dialog
+    visible="{{confirmVisible}}"
+    title="{{confirmTitle}}"
+    content="{{confirmContent}}"
+    bind:confirm="onConfirm"
+    bind:cancel="onCancel"
+  />
+</view>
